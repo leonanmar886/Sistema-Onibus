@@ -1,0 +1,19 @@
+{
+  "name": "sistema-onibus",
+  "version": "1.0.0",
+  "description": "Sistema de reserva de assentos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonanmar886/Sistema-Onibus.git"
+  },
+  "author": "Leonan Marques",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonanmar886/Sistema-Onibus/issues"
+  },
+  "homepage": "https://github.com/leonanmar886/Sistema-Onibus#readme"
+}
