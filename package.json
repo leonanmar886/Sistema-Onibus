@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/leonanmar886/Sistema-Onibus/issues"
   },
-  "homepage": "https://github.com/leonanmar886/Sistema-Onibus#readme"
+  "homepage": "https://github.com/leonanmar886/Sistema-Onibus#readme",
+  "dependencies": {
+    "mysql2": "^2.3.3"
+  }
 }
