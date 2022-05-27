@@ -12,6 +12,7 @@ CREATE TABLE `sistemaonibus`.`linhas` (
   `lin_destino` INT NULL,
   `lin_valor` FLOAT NULL,
   `lin_horario` TIME,
+  `lin_descricao` VARCHAR(45) NULL,
   PRIMARY KEY (`lin_id`));
 
   GO 
