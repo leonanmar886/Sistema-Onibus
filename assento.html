@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="bustransport_bus_4984.ico" type="image/x-icon">
+    <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: #D9D9D9;
+            }
+    </style>
+    <link rel="stylesheet" href="estilo.css">
+    <title>Reserva de assento</title>
+</head>
+<body>
+    <header>
+        <img src="bustransport_bus_4984.ico" alt="icone-onibus">
+        <ul>
+            <a class="cabecalho-menu-item" href="entrada.html"><li>Início</li></a>
+            <a class="cabecalho-menu-item" href="linha.html"> <li>Reserva</li></a>
+            <a class="cabecalho-menu-item" href="addlinha.html"> <li>Adicionar nova linha</li> </a>
+        </ul>
+    </header><hr>
+    <h1 class="linhaselecionada">Linha 020</h1>
+    <div class="modal-wrapper">
+            <div class="modal">
+                <span>Selecione sua poltrona</span>
+            </div>
+    </div><br>
+            
+    <section id="assentos">
+        <div class="A4">
+            <table class="A2">
+                <tr>
+                    <th><input id="B1" class="A1" type="button" value="A1" onclick="clicado('B1')"/></th>
+                    <th><input class="A1" type="button" value="A2" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A5" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A6" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A9" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A10" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A13" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A14" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A17" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A18" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A21" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A22" onclick="showModal(this)" /></th>
+                </tr>
+        </table>
+        </div>
+        
+        <div class="A4">
+            <table class="A3">
+                <tr>
+                    <th><input class="A1" type="button" value="A4" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A3" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A8" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A7" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A12" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A11" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A16" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A15" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A20" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A19" onclick="showModal(this)" /></th>
+                </tr>
+                <tr>
+                    <th><input class="A1" type="button" value="A24" onclick="showModal(this)" /></th>
+                    <th><input class="A1" type="button" value="A23" onclick="showModal(this)" /></th>
+                </tr>
+            </table>
+        </div>
+           
+    </section>
+</body>
+</html>

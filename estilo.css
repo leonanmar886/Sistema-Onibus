@@ -1,0 +1,150 @@
+body{
+    color: black;
+    max-width: 1920px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.mainentrada{
+    display: flex;
+    flex-direction: row;
+    margin-top: 160px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#imagem {
+    width: 650px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+    
+}
+.grupo{
+    max-width: 30%;
+    margin-left: auto;
+    margin-right: auto
+}
+#titulo{
+    text-align: center;
+}
+h4#ou{
+    flex-direction: row;
+    text-align: center;
+}
+
+.cadastro {
+    color: black;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto
+    
+}
+.cadastro:hover{
+    color: red;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+li{
+    display: inline-block;
+    margin: 20px;
+}
+
+.cabecalho-menu-item{
+    color: black;
+    font-family:unset;
+    font-weight: 400;
+    font-size: 18px;
+}
+.cabecalho-menu-item:hover{
+    color: red;
+}
+
+#top1, #bot1{
+    font-size: 32px;
+    }
+#top2, #bot2{
+    font-size: 20px;
+}
+
+#agendados, #linhasdisp{
+    font-size: 17px;
+    display: flex;
+    gap: 80px;
+}
+.box{
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+   
+}
+fieldset{
+    border: 3px solid black;
+    border-radius: 5px;
+}
+legend{
+    border: 1px solid black;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+.inputbox{
+    position: relative;
+}
+.L1{
+    font-size: 22px;
+    text-align: center;
+}
+.L2{
+    font-size: 12px;
+    text-align: center;
+}
+
+section{
+    background-image: url(onibus\ ofc.png);
+    padding: 15px;
+    width: 500px;
+    height: 1100px;
+    border-radius: 10px 10px 10px;
+    margin: auto;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.76);
+    display: flex;
+}
+
+input.A1 {
+    height: 35px;
+    width: 35px;
+    position: relative;
+    top: 300px;
+    left: 47.5px;
+    margin-left: 1px;
+}
+table{
+    flex-direction: row;
+    
+}
+.A2{
+    position: relative;
+    
+    padding: 7px;
+}
+.A3{
+    position: relative; 
+    padding: 7px;
+}
+th{
+    padding: 20px;
+    padding-top: 35px;
+     
+}
+.A4{
+    padding-right: 62px;
+}

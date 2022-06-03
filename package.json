@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/leonanmar886/Sistema-Onibus#readme",
   "dependencies": {
+    "express": "^4.18.1",
     "mysql2": "^2.3.3"
   }
 }
