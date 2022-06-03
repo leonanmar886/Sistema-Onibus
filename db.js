@@ -26,7 +26,7 @@ async function selectAssentos(id){ //função que retorna todos os assentos disp
 
 async function updateOnibus(id, valorCampo){//função que atualiza o onibus. O unico campo que pode ser alterado é a lista de assentos disponíveis.
     const coneccao = await conecta();
-    const sql = "UPDATE onibus SET oni_assentos = '?' WHERE oni_id = ?"
+    const sql = "UPDATE onibus SET oni_assentos = ? WHERE oni_id = ?"
     const valores = [valorCampo, id];
     return await coneccao.query(sql, valores);
 }
