@@ -19,14 +19,9 @@ async function selectOnibus(id){ //função que retorna os dados do onibus corre
 
 async function selectAssentos(id){ //função que retorna todos os assentos disponíveis do onibus
     const coneccao = await conecta();
-    var results;
     const sql = 'SELECT oni_assentos FROM onibus WHERE oni_id = ?;'
-    await coneccao.query(sql, id, function(err, results, fields) {
-        console.log(results); // results contains rows returned by server
-        console.log(fields); // fields contains extra meta data about results, if available
-      }
-    );
-    return results;
+    const results = await coneccao.query(sql, id);
+    return results[0];
 }
 
 async function updateOnibus(id, valorCampo){//função que atualiza o onibus. O unico campo que pode ser alterado é a lista de assentos disponíveis.
