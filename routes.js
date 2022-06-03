@@ -23,16 +23,20 @@ rotas.get('/cadastrar', (req, res) => {
 rotas.get('/entrar', (req, res) => {
     let login = req.query['login']
     let senha = req.query['senha']
-    var onibus;
 
     // Chamada da função de requisição dos dados do usuário
     console.log('Login: ' + login + ' Senha: ' + senha)
     
-    (async () => {
-        const banco = require('/db')
-        onibus = banco.selectAllOnibus()
-        banco.selectAssentos()
-    })()
+    const banco = require('./db')
+    var onibus1 = banco.selectAllOnibus;
+    console.log(onibus1)
+
+    /*let onibus2 = (async () => {
+        const banco = require('./db')
+        onibus1 = banco.selectAllOnibus()
+        console.log(onibus1)
+        return onibus1
+    })();*/
 
     let onibus = ['pici1 - Destino: Campus do pici', 'pici2 - Destino: Campus do pici']
     var data = new Date()

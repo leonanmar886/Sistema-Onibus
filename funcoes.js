@@ -29,9 +29,7 @@ async function reservarCadeira(idCadeira, idOnibus) {
     //console.log(clientes)
 
     //const result = await db.insertOnibus(2, '1,2,3,4,5', formatarData('01/06/2022'));
-    const assentos = await db.selectAssentos(3);
-    const assentosDisponiveis = assentos[0].oni_assentos
-    const update = await reservarCadeira(1, 2);
-    update == true ? console.log("Suceso em reservar.") : console.log("Falha em reservar.");
+    const onibus1 = await db.selectAllOnibus()
+    console.log(onibus1)
 })();
 
