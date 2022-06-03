@@ -3,6 +3,7 @@ CREATE TABLE `sistemaonibus`.`onibus` (
   `oni_linha` INT NULL,
   `oni_assentos` VARCHAR(90) NULL,
   `oni_data` DATE,
+  `oni_nome` VARCHAR(45) NULL,
   PRIMARY KEY (`oni_id`));
 
 GO 
