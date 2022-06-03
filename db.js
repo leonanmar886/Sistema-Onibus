@@ -10,6 +10,13 @@ async function conecta(params) {
 
 conecta();
 
+async function selectAllOnibus(){
+    const coneccao = await conecta();
+    const sql = 'SELECT oni_id, oni_nome FROM onibus';
+    const[linhas] = await coneccao.query(sql);
+    return linhas;
+}
+
 async function selectOnibus(id){ //função que retorna os dados do onibus correspondente ao id passado como parametro
     const coneccao = await conecta();
     const sql = 'SELECT * FROM onibus WHERE ?;'
@@ -31,10 +38,10 @@ async function updateOnibus(id, valorCampo){//função que atualiza o onibus. O 
     return await coneccao.query(sql, valores);
 }
 
-async function insertOnibus(numLinha, assentosDisponiveis, data){ //função que insere um novo onibus
+async function insertOnibus(numLinha, assentosDisponiveis, data, nome){ //função que insere um novo onibus
     const coneccao = await conecta();
-    const sql = "INSERT INTO onibus(oni_linha, oni_assentos, oni_data) VALUES (?, ?, ?);"
-    const valores = [numLinha, assentosDisponiveis, data];
+    const sql = "INSERT INTO onibus(oni_linha, oni_assentos, oni_data, oni_nome) VALUES (?, ?, ?, ?);"
+    const valores = [numLinha, assentosDisponiveis, data, nome];
     return await coneccao.query(sql, valores);
 }
 
