@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="bustransport_bus_4984.ico" type="image/x-icon">
+    <link rel="stylesheet" href="estilo.css">
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #D9D9D9;
+        }
+    </style>
+    <title>Cadastro</title>
+</head>
+<body class="prim">
+    <main>
+        <div class="mainentrada">
+            <div id="imagem">
+                <img src="bus-g4731f7060_640.png" alt="foto de um onibus">
+            </div>
+
+            
+
+            <form method="get" action="/cadastrar">
+                <div>
+                    <h1 id="titulo">Cadastre-se:</h1>
+                </div>
+                <fieldset class="grupo">
+                    <div class="campocadastro">
+                        <label for="login"><strong>Login</strong></label>
+                        <input type="text" name="login" id="login" required>
+                    </div><br>
+            
+                    <div class="campocadastro">
+                        <label for="senha"><strong>Senha</strong></label>
+                        <input type="text" name="senha" id="senha" required>
+                    </div><br>
+                    <div class="profissao">
+                        <label>
+                            <strong>Em qual categoria você se encaixa?</strong> 
+                        </label><br>
+                        <label> 
+                            <input type="radio" name="profissao" value="estudante" checked>Estudante
+                        </label>
+                        <label> 
+                            <input type="radio" name="profissao" value="outro" checked>Outro
+                        </label>
+                        <label> 
+                            <input type="radio" name="profissao" value="idoso" checked>Idoso
+                        </label>
+                    </div><br>
+                    <button class="botaocadastro" type="submit" onsubmit="">Salvar e entrar</button>
+
+                </fieldset>
+                
+                
+                        
+            </form>
+        </div>
+            
+    </main>
+    <h4 id="ou">OU</h4><br><br><br>
+    <footer>
+        <div class="cadastro">
+            <a href="entrada.html" class="cadastro">Faça Login</a>
+        </div>
+    </footer>
+
+</body>
+</html>
