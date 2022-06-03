@@ -10,7 +10,7 @@ async function conecta(params) {
 
 conecta();
 
-async function selectAllOnibus(){
+async function selectAllOnibus(){//função que retorna o id e o nome de todos os onibus cadastrados.
     const coneccao = await conecta();
     const sql = 'SELECT oni_id, oni_nome FROM onibus';
     const[linhas] = await coneccao.query(sql);
@@ -47,5 +47,5 @@ async function insertOnibus(numLinha, assentosDisponiveis, data, nome){ //funç�
 
 
 
-module.exports = {selectOnibus, insertOnibus, selectAssentos, updateOnibus};
+module.exports = {selectOnibus, insertOnibus, selectAssentos, updateOnibus, selectAllOnibus};
 
