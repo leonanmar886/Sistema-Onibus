@@ -19,18 +19,26 @@ rotas.get('/cadastrar', (req, res) => {
     res.sendFile(__dirname + '/entrada.html')
 })
 
+// Rota de login
 rotas.get('/entrar', (req, res) => {
     let login = req.query['login']
     let senha = req.query['senha']
+    var onibus;
 
     // Chamada da função de requisição dos dados do usuário
     console.log('Login: ' + login + ' Senha: ' + senha)
+    
+    (async () => {
+        const banco = require('/db')
+        onibus = banco.selectAllOnibus()
+        banco.selectAssentos()
+    })()
 
     let onibus = ['pici1 - Destino: Campus do pici', 'pici2 - Destino: Campus do pici']
     var data = new Date()
-    horas = ['07:00','08:00','09:00','10:00','11:00','12:00','13:00','14:00','15:00','16:00','17:00','18:00']
-    reserva = [[20, 'Pici', '07:00', '20', '30/06/2022']]
-    data = data.getDay() + '/' + data.getDate() + '/' + data.getFullYear()
+    horas = ['07:00', '08:00', '09:00', '10:00','11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00']
+    reserva = [[20, 'Pici', '07:00', '20', '30/06/2022'], [30, 'Benfica', '08:00', '22', '31/06/2022']]
+    var data1 = data.getDay() + '/' + data.getDate() + '/' + data.getFullYear()
     if(false){
         res.sendFile(__dirname + '/entrada.html')
     } else{
@@ -66,7 +74,7 @@ rotas.get('/entrar', (req, res) => {
                 </header><hr>
                 <main>
                     <div id="top1">
-                        <h2>Suas viagens:</h2>
+                        <h2>Suas viagens, ` + login + `:</h2>
                         </div>
                         <div id="top2">
                             <h3>Viagens agendadas:</h4>
@@ -81,25 +89,29 @@ rotas.get('/entrar', (req, res) => {
         pagina = pagina + '\n<table>'
         for(var x in reserva){
             pagina = pagina + '\n<tr><td>' + reserva[x][0] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>' + '<td>' + reserva[x][1] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>' + '<td>' + reserva[x][2] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>' + '<td>' + reserva[x][3] + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>' + '<td>' + reserva[x][4] + '</td>' + '</tr>'
-        }
-        pagina = pagina + `
-        \n</table>\n<div id="bot1">
-                <h2>Nova viagem:</h2>
-            </div>
-            <div id="bot2">
-                <h3>Reserve assento em uma linha cadastrada.</h3>
-            </div>
-                <form action="" method="get">
-                    <label for="onibus">Onibus</label>
-                        <select name="bus" id="bus">
-                            <option value="pici1">pici1 - destino: Campus do pici</option>
-                            <option value="pici2">bemfica1 - destino: Campus do benfica</option>
-                        </select>
+}
+      pagina = pagina + `
+  
+          \n</table>\n<div id="bot1">
+                          <h2>Nova viagem:</h2>
+                      </div>
+                      <div id="bot2">
+                          <h3>Reserve assento em uma linha cadastrada.</h3>
+                      </div>
+                          <form action="/assentos" method="get">
+                              <label for="onibus">Onibus</label>
+                                <select name="bus" id="bus">`
+
+    for(x in onibus){
+        pagina = pagina + '<option value="' + onibus[x] + '">' + onibus[x] + '</option>'
+    }
+    pagina = pagina + `</select>
                     <label for="onibus">Horario</label>
-                        <select name="horario" id="horario">
-                            <option value="x">07h:00</option>
-                            <option value="x">07h:00</option>
-                        </select>
+                        <select name="horario" id="horario">`
+    for (x in horas){
+      pagina = pagina + '<option value="' + horas[x] + '">' + horas[x] + '</option>'
+    }
+    pagina = pagina + `</select>
                     
                     <button type="submit">reservar</button>
                 </form>
@@ -109,13 +121,15 @@ rotas.get('/entrar', (req, res) => {
 
         </main>
         </body>
-        </html>
-        `
+        </html>`
+                        
+    
     }
     res.send(pagina)
 
 })
 
+// Rota que mostra os assentos disponíveis
 rotas.get('/assentos', (req, res) => {
     let linha = req.query['onibus']
     let data = req.query['data']
@@ -168,6 +182,7 @@ rotas.get('/assentos', (req, res) => {
                 cont = 0
                 pagina = pagina + '\n</tr>'
         }
+    
 
         if(disponiveis.indexOf(acc01[x]) !== -1){
             pagina = pagina + '\n<th><input style="background-color: green;" id="B' + String(i) +'" class="A1" type="button" value="A' + String(i) +'" onclick="clicado("B' + String(i) + '")"/></th>'
