@@ -232,7 +232,7 @@ rotas.get('/inserirlinha', (req, res) => {
     let parada = req.query['parada']
     let horario = req.query['horario']
   
-    pagina = `
+    var pagina = `
     <!DOCTYPE html>
     <html lang="pt-br">
     <head>
@@ -265,8 +265,9 @@ rotas.get('/inserirlinha', (req, res) => {
         <p>Parada:` + parada + `</p>
         <p>Horário de Saída:` + horario + `</p>
       </div>
-  
-  
-  `
+
+    </body>
+  </html>`
+  res.send(pagina)
   })
 module.exports = rotas
