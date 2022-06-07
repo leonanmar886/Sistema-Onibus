@@ -135,8 +135,8 @@ rotas.get('/entrar', (req, res) => {
 
 // Rota que mostra os assentos disponíveis
 rotas.get('/assentos', (req, res) => {
-    let linha = req.query['onibus']
-    let data = req.query['data']
+    let linha = req.query['bus']
+    let data = req.query['horario']
     var pagina = `<!DOCTYPE html>
     <html lang="pt-br">
     <head>
@@ -162,7 +162,8 @@ rotas.get('/assentos', (req, res) => {
                 <a class="cabecalho-menu-item" href="addlinha.html"> <li>Adicionar nova linha</li> </a>
             </ul>
         </header><hr>
-        <h1 class="linhaselecionada">Linha 020</h1>
+        <h1 class="linhaselecionada">LINHA: `+ linha + `</h1>
+        <h1 class="linhaselecionada">HORÁRIO: `+ data + `</h1>
         <div class="modal-wrapper">
                 <div class="modal">
                     <span>Selecione sua poltrona</span>
