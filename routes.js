@@ -21,14 +21,9 @@ rotas.get('/cadastrar', (req, res) => {
 
 // Rota de login
 rotas.get('/entrar', (req, res) => {
-    try{
-        let login = req.query['login']
-        let senha = req.query['senha']
-    }
-    catch (e) {
-        // declarações para manipular quaisquer exceções
-        logMyErrors(e); // passa o objeto de exceção para o manipulador de erro
-     }
+    let login = req.query['login']
+    let senha = req.query['senha']
+
     // Chamada da função de requisição dos dados do usuário
     console.log('Login: ' + login + ' Senha: ' + senha)
     
