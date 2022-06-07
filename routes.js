@@ -228,7 +228,7 @@ rotas.get('/assentos', (req, res) => {
 // Rota de cadastro de novas linhas
 rotas.get('/inserirlinha', (req, res) => {
     let numero = req.query['numero']
-    let nome = req.query['nome']
+    let nome = req.query['busname']
     let parada = req.query['parada']
     let horario = req.query['horario']
   
