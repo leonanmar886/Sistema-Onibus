@@ -28,15 +28,28 @@ rotas.get('/entrar', (req, res) => {
     console.log('Login: ' + login + ' Senha: ' + senha)
     
     const banco = require('./db')
-    var onibus1 = banco.selectAllOnibus;
-    console.log(onibus1)
+    let todosOnibus = []
 
-    /*let onibus2 = (async () => {
-        const banco = require('./db')
-        onibus1 = banco.selectAllOnibus()
-        console.log(onibus1)
-        return onibus1
-    })();*/
+    banco.selectAllOnibus().then(
+        v => {
+            let qtdLinhas = Object.keys(v).length
+
+            for(var i = 0; i<= qtdLinhas - 1; i++){
+                todosOnibus[i] = v[i]
+            }
+        }
+    ).finally(
+        t => {
+            console.log(todosOnibus)
+        }
+    )
+
+    // let onibus2
+    // onibus2 = (async () => {
+    //     const banco = require('./db')
+    //     onibus1 = await banco.selectAllOnibus()
+    // });
+    // console.log(onibus2)
 
     let onibus = ['pici1 - Destino: Campus do pici', 'pici2 - Destino: Campus do pici']
     var data = new Date()
