@@ -261,10 +261,10 @@ rotas.get('/inserirlinha', (req, res) => {
   
       <div class='dados-linha'>
         <h1>Linha Cadastrada!</h1>
-        <p>Nome:` + numero + `</p>
-        <p>Número:` + nome + `</p>
-        <p>Parada:` + parada + `</p>
-        <p>Horário de Saída:` + horario + `</p>
+        <p><b>Nome:</b>` + numero + `</p>
+        <p><b>Número:</b>` + nome + `</p>
+        <p><b>Parada:</b>` + parada + `</p>
+        <p><b>Horário de Saída:</b>` + horario + `</p>
       </div>
 
     </body>
