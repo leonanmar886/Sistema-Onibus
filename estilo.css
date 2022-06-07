@@ -148,3 +148,9 @@ th{
 .A4{
     padding-right: 62px;
 }
+
+.dados-linha{
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+}
