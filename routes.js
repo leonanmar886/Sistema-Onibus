@@ -172,7 +172,7 @@ rotas.get('/assentos', (req, res) => {
         <section id="assentos">
             <div class="A4">
                 <table class="A2">`
-    const acc01 = [1,2,5,6,9,10,13,14,17,18,21,22,25,26]
+    const acc01 = [1,2,5,6,9,10,13,14,17,18,21,22]
     const acc02 = [4,3,8,7,12,11,16,15,20,19,24,23]
     var disponiveis = [1,2,3,4,5,6,7,8,9,10]
     var cont = 0
@@ -261,8 +261,8 @@ rotas.get('/inserirlinha', (req, res) => {
   
       <div class='dados-linha'>
         <h1>Linha Cadastrada!</h1>
-        <p><b>Nome:</b>` + numero + `</p>
-        <p><b>Número:</b>` + nome + `</p>
+        <p><b>Nome:</b>` + nome + `</p>
+        <p><b>Número:</b>` + numero + `</p>
         <p><b>Parada:</b>` + parada + `</p>
         <p><b>Horário de Saída:</b>` + horario + `</p>
       </div>
