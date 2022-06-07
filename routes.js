@@ -38,7 +38,7 @@ rotas.get('/entrar', (req, res) => {
         return onibus1
     })();*/
 
-    let onibus = ['Pici01  DESTINO: Campus do pici', 'Pici02  DESTINO: Campus do pici', 'Benfica01  DESTINO: Campus do Benfica', 'Porangabuçu01  DESTINO: Campus do Porangabuçu']
+    let onibus = ['Pici01  \nDESTINO: Campus do pici', 'Pici02  \nDESTINO: Campus do pici', 'Benfica01  \nDESTINO: Campus do Benfica', 'Porangabuçu01  \nDESTINO: Campus do Porangabuçu']
     var data = new Date()
     horas = ['07:00', '08:00', '09:00', '10:00','11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00']
     reserva = [[20, 'Pici', '07:00', '20', '30/06/2022'], [30, 'Benfica', '08:00', '22', '31/06/2022']]
