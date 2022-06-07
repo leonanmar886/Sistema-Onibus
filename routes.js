@@ -257,6 +257,7 @@ rotas.get('/inserirlinha', (req, res) => {
                 <a class="cabecalho-menu-item" href="/entrar"> <li>Reserva</li></a>
                 <a class="cabecalho-menu-item" href="addlinha.html"> <li>Adicionar nova linha</li> </a>
             </ul>
+        </header>
   
       <div class='dados-linha'>
         <h1>Linha Cadastrada!</h1>
