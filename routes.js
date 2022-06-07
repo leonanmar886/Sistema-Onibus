@@ -224,4 +224,49 @@ rotas.get('/assentos', (req, res) => {
         </html>`
     res.send(pagina)
 })
+
+// Rota de cadastro de novas linhas
+rotas.get('/inserirlinha', (req, res) => {
+    let numero = req.query['numero']
+    let nome = req.query['nome']
+    let parada = req.query['parada']
+    let horario = req.query['horario']
+  
+    pagina = `
+    <!DOCTYPE html>
+    <html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <style>
+                body{
+                    font-family: Arial, Helvetica, sans-serif;
+                    background-color: #D9D9D9;
+                }
+        </style>
+        <link rel="stylesheet" href="estilo.css">
+        <link rel="shortcut icon" href="bustransport_bus_4984.ico" type="image/x-icon">
+        <title>Adicione uma nova linha</title>
+    </head>
+    <body class="prim">
+        <header>
+            <img src="bustransport_bus_4984.ico" alt="icone-onibus">
+            <ul>
+                <a class="cabecalho-menu-item" href="/"><li>Início</li></a>
+                <a class="cabecalho-menu-item" href="/entrar"> <li>Reserva</li></a>
+                <a class="cabecalho-menu-item" href="addlinha.html"> <li>Adicionar nova linha</li> </a>
+            </ul>
+  
+      <div class='dados-linha'>
+        <h1>Linha Cadastrada!</h1>
+        <p>Nome:` + numero + `</p>
+        <p>Número:` + nome + `</p>
+        <p>Parada:` + parada + `</p>
+        <p>Horário de Saída:` + horario + `</p>
+      </div>
+  
+  
+  `
+  })
 module.exports = rotas
