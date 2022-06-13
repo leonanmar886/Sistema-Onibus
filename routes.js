@@ -30,26 +30,8 @@ rotas.get('/entrar', (req, res) => {
     const banco = require('./db')
     let todosOnibus = []
 
-    banco.selectAllOnibus().then(
-        v => {
-            let qtdLinhas = Object.keys(v).length
-
-            for(var i = 0; i<= qtdLinhas - 1; i++){
-                todosOnibus[i] = v[i]
-            }
-        }
-    ).finally(
-        t => {
-            console.log(todosOnibus)
-        }
-    )
-
-    // let onibus2
-    // onibus2 = (async () => {
-    //     const banco = require('./db')
-    //     onibus1 = await banco.selectAllOnibus()
-    // });
-    // console.log(onibus2)
+    const assentos = banco.selectAllOnibus()
+    console.log(assentos)
 
     let onibus = ['Pici01  <br>DESTINO: Campus do pici', 'Pici02  <br>DESTINO: Campus do pici', 'Benfica01  <br>DESTINO: Campus do Benfica', 'Porangabuçu01  <br>DESTINO: Campus do Porangabuçu']
     var data = new Date()
@@ -188,7 +170,7 @@ rotas.get('/assentos', (req, res) => {
                 <table class="A2">`
     const acc01 = [1,2,5,6,9,10,13,14,17,18,21,22]
     const acc02 = [4,3,8,7,12,11,16,15,20,19,24,23]
-    var disponiveis = [1,2,3,4,5,6,7,8,9,10]
+    var disponiveis = [1,2,3,4,5,6,7,8]
     var cont = 0
     var i;
     for(let x in acc01){

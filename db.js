@@ -3,7 +3,7 @@ async function conecta(params) {
         return global.connection
 
     const mysql = require("mysql2/promise")
-    const coneccao = await mysql.createConnection("mysql://root:261102leo@localhost:3306/sistemaonibus")
+    const coneccao = await mysql.createConnection("mysql://root:suasenha@localhost:3306/sistemaonibus")
     global.connection = coneccao
     return coneccao
 }
